@@ -48,8 +48,8 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-3xl px-6 pb-24">
-        <div className="space-y-7 text-lg leading-relaxed text-foreground/90">
+      <section className="mx-auto max-w-3xl px-6 pb-20">
+        <div className="space-y-6 text-lg leading-relaxed text-foreground/90">
           <p>
             I'm a junior at the University of California, Berkeley studying
             Electrical Engineering and Computer Science. I spend most of my
@@ -79,7 +79,7 @@ function AboutPage() {
           </p>
         </div>
 
-        <div className="mt-16 grid gap-10 border-t border-white/10 pt-10 sm:grid-cols-3">
+        <div className="mt-12 grid gap-8 border-t border-white/10 pt-8 sm:grid-cols-3">
           <div>
             <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
               Studying
@@ -105,7 +105,7 @@ function AboutPage() {
           </div>
         </div>
 
-        <div className="mt-16 flex flex-wrap gap-6 text-sm">
+        <div className="mt-12 flex flex-wrap gap-6 text-sm">
           <Link
             to="/projects"
             className="group inline-flex items-center gap-2 border-b border-foreground/40 pb-1 transition-colors hover:border-primary hover:text-primary"
