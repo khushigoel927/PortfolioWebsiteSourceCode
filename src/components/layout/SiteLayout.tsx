@@ -35,13 +35,10 @@ export function SiteLayout({ children }: { children: ReactNode }) {
         <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-10 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
           <p className="font-serif text-base text-foreground">Khushi Goel</p>
           <div className="flex items-center gap-6">
-            <a href="mailto:khushi@example.com" className="hover:text-foreground transition-colors">
-              Email
-            </a>
-            <a href="https://github.com" target="_blank" rel="noreferrer" className="hover:text-foreground transition-colors">
+            <a href="https://github.com/khushigoel927" target="_blank" rel="noreferrer" className="hover:text-foreground transition-colors">
               GitHub
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:text-foreground transition-colors">
+            <a href="https://www.linkedin.com/in/khushigoel-cal/" target="_blank" rel="noreferrer" className="hover:text-foreground transition-colors">
               LinkedIn
             </a>
           </div>
