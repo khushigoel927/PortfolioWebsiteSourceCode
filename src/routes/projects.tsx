@@ -8,7 +8,7 @@ export const Route = createFileRoute("/projects")({
       {
         name: "description",
         content:
-          "Engineering and software projects by Khushi Goel: a Kalshi trading bot, a Java SQL engine, a RISC-V CPU emulator, NGordNet, and a tile-based game engine.",
+          "A collection of software and engineering projects by Khushi Goel — from trading bots and databases to CPUs, games, and language tools.",
       },
     ],
   }),
@@ -17,6 +17,7 @@ export const Route = createFileRoute("/projects")({
 
 type Project = {
   title: string;
+  year: string;
   blurb: string;
   detail: string;
   stack: string[];
@@ -25,38 +26,51 @@ type Project = {
 const projects: Project[] = [
   {
     title: "Kalshi Trading Bot",
-    blurb: "Automated trading on live event markets.",
+    year: "2026",
+    blurb: "A bot that trades on live event markets, on its own.",
     detail:
-      "An automated trading system built on top of Kalshi's API that subscribes to live market updates and executes trades in response to changing prices and signals.",
-    stack: ["Python", "Kalshi API", "WebSockets"],
+      "An automated trading system that plugs into Kalshi's live market feed, watches multiple events at once, and places trades based on clear rules I set. The focus was reliability and keeping risk in check — so it reacts quickly to price changes without ever putting too much on a single market.",
+    stack: ["Java", "REST API", "Real-time data"],
   },
   {
     title: "SQL Engine in Java",
-    blurb: "A small relational database, written from scratch.",
+    year: "2026",
+    blurb: "A tiny database I built from scratch.",
     detail:
-      "A Java-based SQL engine that parses and executes core queries — CREATE, INSERT, SELECT, DELETE, and JOIN — backed by a hand-written storage and query layer.",
-    stack: ["Java", "Parsing", "Storage"],
+      "A Java program that understands SQL — the language used to talk to databases. It can create tables, add data, search through them, delete rows, and combine information from multiple tables. I wrote the parser that reads the queries and the engine that runs them, all from the ground up.",
+    stack: ["Java", "SQL", "Parsers"],
   },
   {
     title: "32-Register RISC-V CPU Emulator",
-    blurb: "Pipelined datapath built from the ISA up.",
+    year: "2025",
+    blurb: "A working computer processor, built piece by piece.",
     detail:
-      "A pipelined 32-register RISC-V CPU implemented by translating the ISA specification into modular datapath and control logic components.",
-    stack: ["RISC-V", "Computer Architecture", "Systems"],
-  },
-  {
-    title: "NGordNet",
-    blurb: "Word usage and meaning across history.",
-    detail:
-      "A word analysis tool built on WordNet and Google NGram data, used to visualize how words and their hyponyms appear and evolve across decades of writing.",
-    stack: ["Java", "Data Structures", "Visualization"],
+      "A simulated CPU based on the RISC-V instruction set, built in Logisim by wiring together the same kinds of components a real chip uses. It runs actual assembly programs, and I debugged it by tracing signals through the circuit just like an engineer would on real hardware.",
+    stack: ["Logisim", "Computer Architecture", "RISC-V Assembly"],
   },
   {
     title: "Build Your Own World",
-    blurb: "A tile-based world with persistence.",
+    year: "2025",
+    blurb: "A tile-based exploration game with its own engine.",
     detail:
-      "A tile-based game engine featuring procedurally generated worlds, interactive features, user input handling, and save/load functionality.",
-    stack: ["Java", "Game Engine", "Procedural Generation"],
+      "A 2D game where every world is generated randomly — rooms, hallways, and features connect differently each time you play. You can save your progress and pick up later. I also added a line-of-sight feature so you only see what your character can actually see, which makes exploring feel a lot more immersive.",
+    stack: ["Java", "StdDraw", "Procedural Generation"],
+  },
+  {
+    title: "NGordNet",
+    year: "2025",
+    blurb: "Exploring how words have been used over time.",
+    detail:
+      "A tool that combines WordNet (a giant map of how English words relate to each other) with Google's NGram data (which tracks how often words appear in books over the years). You can pick a word and see how its usage — and the usage of related words — has changed across decades.",
+    stack: ["Java", "Graphs", "Data Visualization"],
+  },
+  {
+    title: "Python Interpreter for Scheme",
+    year: "2024",
+    blurb: "A Python program that can read and run a different language.",
+    detail:
+      "An interpreter that takes code written in Scheme — an older programming language often used to teach computer science — and runs it inside Python. It handles math, lists, recursion, conditionals, and lambda functions, basically translating one language into another on the fly.",
+    stack: ["Python", "Scheme", "Interpreters"],
   },
 ];
 
@@ -70,9 +84,14 @@ function ProjectRow({ project, index }: { project: Project; index: number }) {
         {String(index + 1).padStart(2, "0")}
       </p>
       <div>
-        <h2 className="font-serif text-3xl leading-tight tracking-tight transition-colors group-hover:text-primary group-focus-within:text-primary sm:text-4xl">
-          {project.title}
-        </h2>
+        <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
+          <h2 className="font-serif text-3xl leading-tight tracking-tight transition-colors group-hover:text-primary group-focus-within:text-primary sm:text-4xl">
+            {project.title}
+          </h2>
+          <span className="font-sans text-xs uppercase tracking-[0.2em] text-muted-foreground">
+            {project.year}
+          </span>
+        </div>
         <div className="grid grid-rows-[0fr] opacity-0 transition-all duration-500 ease-out group-hover:grid-rows-[1fr] group-hover:opacity-100 group-focus-within:grid-rows-[1fr] group-focus-within:opacity-100">
           <div className="overflow-hidden">
             <p className="mt-3 text-base text-muted-foreground">
@@ -97,6 +116,7 @@ function ProjectRow({ project, index }: { project: Project; index: number }) {
     </article>
   );
 }
+
 
 function ProjectsPage() {
   return (
