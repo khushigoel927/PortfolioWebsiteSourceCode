@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "../components/layout/SiteLayout";
+import portrait from "../assets/khushi-2.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -23,17 +24,29 @@ export const Route = createFileRoute("/")({
 function AboutPage() {
   return (
     <SiteLayout>
-      <section className="mx-auto max-w-3xl px-6 pt-24 pb-16 sm:pt-32">
-        <p className="font-sans text-xs uppercase tracking-[0.2em] text-muted-foreground">
-          About
-        </p>
-        <h1 className="mt-6 font-serif text-5xl leading-[1.05] tracking-tight sm:text-7xl">
-          Khushi Goel.
-        </h1>
-        <p className="mt-6 font-serif text-2xl leading-snug text-muted-foreground sm:text-3xl">
-          Electrical Engineering &amp; Computer Science at UC Berkeley —
-          building systems, taking photos.
-        </p>
+      <section className="mx-auto max-w-6xl px-6 pt-24 pb-16 sm:pt-32">
+        <div className="grid gap-12 sm:grid-cols-[1fr_auto] sm:items-end">
+          <div className="max-w-2xl">
+            <p className="font-sans text-xs uppercase tracking-[0.2em] text-muted-foreground">
+              About
+            </p>
+            <h1 className="mt-6 font-serif text-5xl leading-[1.05] tracking-tight sm:text-7xl">
+              Khushi Goel.
+            </h1>
+            <p className="mt-6 font-serif text-2xl leading-snug text-muted-foreground sm:text-3xl">
+              Electrical Engineering &amp; Computer Science at UC Berkeley —
+              building systems, taking photos.
+            </p>
+          </div>
+          <div className="w-full max-w-[260px] justify-self-start sm:justify-self-end">
+            <img
+              src={portrait}
+              alt="Khushi Goel holding a Nikon camera"
+              className="aspect-[2/3] w-full rounded-md object-cover shadow-2xl"
+              loading="eager"
+            />
+          </div>
+        </div>
       </section>
 
       <section className="mx-auto max-w-3xl px-6 pb-24">

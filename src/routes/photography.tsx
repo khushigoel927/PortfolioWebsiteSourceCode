@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { SiteLayout } from "../components/layout/SiteLayout";
 
 import photo1 from "../assets/khushi-1.jpg";
-import photo2 from "../assets/khushi-2.jpg";
 import photo3 from "../assets/khushi-3.jpg";
 import photo4 from "../assets/khushi-4.jpg";
 import photo5 from "../assets/khushi-5.jpg";
@@ -12,6 +11,8 @@ import photo7 from "../assets/khushi-7.jpg";
 import photo8 from "../assets/khushi-8.jpg";
 import photo9 from "../assets/khushi-9.jpg";
 import photo10 from "../assets/khushi-10.jpg";
+import photo11 from "../assets/khushi-11.jpg";
+import photo12 from "../assets/khushi-12.jpg";
 
 export const Route = createFileRoute("/photography")({
   head: () => ({
@@ -31,11 +32,12 @@ type Photo = { src: string; alt: string };
 
 const photos: Photo[] = [
   { src: photo1, alt: "Pigeon perched on a wooden railing at the pier" },
-  { src: photo2, alt: "Black and white portrait of a photographer with a Nikon camera" },
   { src: photo3, alt: "Silhouette of a graduate against a misty golden sunrise" },
   { src: photo4, alt: "Small white dog resting on a black leather couch" },
   { src: photo5, alt: "Portrait bathed in deep red light" },
+  { src: photo11, alt: "Wire-frame sculpture overgrown with succulents against a dusk sky" },
   { src: photo6, alt: "Pelicans flying over the Bay Bridge" },
+  { src: photo12, alt: "Husky with one blue and one brown eye on a sunlit beach" },
   { src: photo7, alt: "Motorbike parked on a city sidewalk at dusk" },
   { src: photo8, alt: "San Francisco skyline from the Embarcadero steps" },
   { src: photo9, alt: "Crowded street scene at the Embarcadero intersection" },
