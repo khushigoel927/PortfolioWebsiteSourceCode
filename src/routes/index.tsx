@@ -24,16 +24,16 @@ export const Route = createFileRoute("/")({
 function AboutPage() {
   return (
     <SiteLayout>
-      <section className="mx-auto max-w-6xl px-6 pt-14 pb-10 sm:pt-20">
-        <div className="grid gap-8 sm:grid-cols-[1fr_auto] sm:items-end">
+      <section className="mx-auto max-w-6xl px-6 pt-24 pb-16 sm:pt-32">
+        <div className="grid gap-12 sm:grid-cols-[1fr_auto] sm:items-end">
           <div className="max-w-2xl">
             <p className="font-sans text-xs uppercase tracking-[0.2em] text-muted-foreground">
               About
             </p>
-            <h1 className="mt-3 font-serif text-5xl leading-[1.05] tracking-tight sm:text-7xl">
+            <h1 className="mt-6 font-serif text-5xl leading-[1.05] tracking-tight sm:text-7xl">
               Khushi Goel.
             </h1>
-            <p className="mt-4 font-serif text-2xl leading-snug text-muted-foreground sm:text-3xl">
+            <p className="mt-6 font-serif text-2xl leading-snug text-muted-foreground sm:text-3xl">
               Electrical Engineering &amp; Computer Science at UC Berkeley
             </p>
           </div>
@@ -48,8 +48,8 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-3xl px-6 pb-20">
-        <div className="space-y-6 text-lg leading-relaxed text-foreground/90">
+      <section className="mx-auto max-w-3xl px-6 pb-24">
+        <div className="space-y-7 text-lg leading-relaxed text-foreground/90">
           <p>
             I'm a junior at the University of California, Berkeley studying
             Electrical Engineering and Computer Science. I spend most of my
@@ -79,7 +79,7 @@ function AboutPage() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-8 border-t border-white/10 pt-8 sm:grid-cols-3">
+        <div className="mt-16 grid gap-10 border-t border-white/10 pt-10 sm:grid-cols-3">
           <div>
             <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
               Studying
@@ -105,7 +105,7 @@ function AboutPage() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-wrap gap-6 text-sm">
+        <div className="mt-16 flex flex-wrap gap-6 text-sm">
           <Link
             to="/projects"
             className="group inline-flex items-center gap-2 border-b border-foreground/40 pb-1 transition-colors hover:border-primary hover:text-primary"
