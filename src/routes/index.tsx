@@ -34,8 +34,7 @@ function AboutPage() {
               Khushi Goel.
             </h1>
             <p className="mt-6 font-serif text-2xl leading-snug text-muted-foreground sm:text-3xl">
-              Electrical Engineering &amp; Computer Science at UC Berkeley —
-              building systems, taking photos.
+              Electrical Engineering &amp; Computer Science at UC Berkeley
             </p>
           </div>
           <div className="w-full max-w-[260px] justify-self-start sm:justify-self-end">
@@ -101,7 +100,7 @@ function AboutPage() {
               Also
             </p>
             <p className="mt-3 font-serif text-xl">
-              Tutoring · FLL coaching · Photography
+              Tutoring · Photography
             </p>
           </div>
         </div>
