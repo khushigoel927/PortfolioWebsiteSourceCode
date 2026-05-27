@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "../components/layout/SiteLayout";
+import portrait from "../assets/khushi-2.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
