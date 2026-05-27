@@ -2,15 +2,16 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { SiteLayout } from "../components/layout/SiteLayout";
 
-import photo1 from "../assets/photo-1.jpg";
-import photo2 from "../assets/photo-2.jpg";
-import photo3 from "../assets/photo-3.jpg";
-import photo4 from "../assets/photo-4.jpg";
-import photo5 from "../assets/photo-5.jpg";
-import photo6 from "../assets/photo-6.jpg";
-import photo7 from "../assets/photo-7.jpg";
-import photo8 from "../assets/photo-8.jpg";
-import photo9 from "../assets/photo-9.jpg";
+import photo1 from "../assets/khushi-1.jpg";
+import photo2 from "../assets/khushi-2.jpg";
+import photo3 from "../assets/khushi-3.jpg";
+import photo4 from "../assets/khushi-4.jpg";
+import photo5 from "../assets/khushi-5.jpg";
+import photo6 from "../assets/khushi-6.jpg";
+import photo7 from "../assets/khushi-7.jpg";
+import photo8 from "../assets/khushi-8.jpg";
+import photo9 from "../assets/khushi-9.jpg";
+import photo10 from "../assets/khushi-10.jpg";
 
 export const Route = createFileRoute("/photography")({
   head: () => ({
@@ -26,18 +27,19 @@ export const Route = createFileRoute("/photography")({
   component: PhotographyPage,
 });
 
-type Photo = { src: string; alt: string; w: number; h: number };
+type Photo = { src: string; alt: string };
 
 const photos: Photo[] = [
-  { src: photo1, alt: "Foggy sunrise over a mountain ridge", w: 1024, h: 1280 },
-  { src: photo2, alt: "Empty city alley at dusk", w: 1280, h: 896 },
-  { src: photo3, alt: "Dewdrops on a green leaf", w: 1024, h: 1024 },
-  { src: photo4, alt: "Golden hour light through autumn trees", w: 1024, h: 1408 },
-  { src: photo5, alt: "Minimal concrete architecture against pale sky", w: 1280, h: 960 },
-  { src: photo6, alt: "Rain droplets on a coffee shop window", w: 1024, h: 1280 },
-  { src: photo7, alt: "Calm ocean horizon at twilight", w: 1408, h: 896 },
-  { src: photo8, alt: "Bicycle leaning against a sunlit wall", w: 1024, h: 1024 },
-  { src: photo9, alt: "Library interior with warm reading lamp", w: 1024, h: 1280 },
+  { src: photo1, alt: "Pigeon perched on a wooden railing at the pier" },
+  { src: photo2, alt: "Black and white portrait of a photographer with a Nikon camera" },
+  { src: photo3, alt: "Silhouette of a graduate against a misty golden sunrise" },
+  { src: photo4, alt: "Small white dog resting on a black leather couch" },
+  { src: photo5, alt: "Portrait bathed in deep red light" },
+  { src: photo6, alt: "Pelicans flying over the Bay Bridge" },
+  { src: photo7, alt: "Motorbike parked on a city sidewalk at dusk" },
+  { src: photo8, alt: "San Francisco skyline from the Embarcadero steps" },
+  { src: photo9, alt: "Crowded street scene at the Embarcadero intersection" },
+  { src: photo10, alt: "Hazy coastal view framed by eucalyptus trees" },
 ];
 
 function PhotographyPage() {
@@ -83,8 +85,6 @@ function PhotographyPage() {
               <img
                 src={p.src}
                 alt={p.alt}
-                width={p.w}
-                height={p.h}
                 loading={i < 3 ? "eager" : "lazy"}
                 className="h-auto w-full object-cover transition-opacity duration-700"
               />
