@@ -24,16 +24,16 @@ export const Route = createFileRoute("/")({
 function AboutPage() {
   return (
     <SiteLayout>
-      <section className="mx-auto max-w-6xl px-6 pt-24 pb-16 sm:pt-32">
-        <div className="grid gap-12 sm:grid-cols-[1fr_auto] sm:items-end">
+      <section className="mx-auto max-w-6xl px-6 pt-14 pb-10 sm:pt-20">
+        <div className="grid gap-8 sm:grid-cols-[1fr_auto] sm:items-end">
           <div className="max-w-2xl">
             <p className="font-sans text-xs uppercase tracking-[0.2em] text-muted-foreground">
               About
             </p>
-            <h1 className="mt-6 font-serif text-5xl leading-[1.05] tracking-tight sm:text-7xl">
+            <h1 className="mt-3 font-serif text-5xl leading-[1.05] tracking-tight sm:text-7xl">
               Khushi Goel.
             </h1>
-            <p className="mt-6 font-serif text-2xl leading-snug text-muted-foreground sm:text-3xl">
+            <p className="mt-4 font-serif text-2xl leading-snug text-muted-foreground sm:text-3xl">
               Electrical Engineering &amp; Computer Science at UC Berkeley
             </p>
           </div>
