@@ -62,29 +62,38 @@ const projects: Project[] = [
 
 function ProjectRow({ project, index }: { project: Project; index: number }) {
   return (
-    <article className="group grid grid-cols-[auto_1fr] gap-6 border-t border-white/10 py-10 first:border-t-0 sm:grid-cols-[4rem_1fr_auto] sm:gap-10 sm:py-12">
-      <p className="font-serif text-2xl text-muted-foreground sm:text-3xl">
+    <article
+      tabIndex={0}
+      className="group grid cursor-default grid-cols-[auto_1fr] gap-6 border-t border-white/10 py-8 outline-none first:border-t-0 focus-visible:ring-2 focus-visible:ring-primary sm:grid-cols-[4rem_1fr] sm:gap-10"
+    >
+      <p className="font-serif text-2xl text-muted-foreground transition-colors group-hover:text-primary group-focus-within:text-primary sm:text-3xl">
         {String(index + 1).padStart(2, "0")}
       </p>
       <div>
-        <h2 className="font-serif text-3xl leading-tight tracking-tight sm:text-4xl">
+        <h2 className="font-serif text-3xl leading-tight tracking-tight transition-colors group-hover:text-primary group-focus-within:text-primary sm:text-4xl">
           {project.title}
         </h2>
-        <p className="mt-2 text-base text-muted-foreground">{project.blurb}</p>
-        <p className="mt-5 max-w-2xl text-base leading-relaxed text-foreground/85">
-          {project.detail}
-        </p>
+        <div className="grid grid-rows-[0fr] opacity-0 transition-all duration-500 ease-out group-hover:grid-rows-[1fr] group-hover:opacity-100 group-focus-within:grid-rows-[1fr] group-focus-within:opacity-100">
+          <div className="overflow-hidden">
+            <p className="mt-3 text-base text-muted-foreground">
+              {project.blurb}
+            </p>
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-foreground/85">
+              {project.detail}
+            </p>
+            <ul className="mt-5 flex flex-wrap gap-2">
+              {project.stack.map((s) => (
+                <li
+                  key={s}
+                  className="rounded-full border border-white/15 px-3 py-1 text-xs tracking-wide text-muted-foreground"
+                >
+                  {s}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
-      <ul className="flex flex-wrap gap-2 sm:flex-col sm:items-end sm:gap-2">
-        {project.stack.map((s) => (
-          <li
-            key={s}
-            className="rounded-full border border-white/15 px-3 py-1 text-xs tracking-wide text-muted-foreground"
-          >
-            {s}
-          </li>
-        ))}
-      </ul>
     </article>
   );
 }
@@ -101,7 +110,7 @@ function ProjectsPage() {
         </h1>
         <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
           A handful of things I've built — across markets, databases,
-          architecture, language, and game engines.
+          architecture, language, and game engines. Hover any title to read more.
         </p>
       </section>
 
