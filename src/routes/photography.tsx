@@ -28,20 +28,20 @@ export const Route = createFileRoute("/photography")({
   component: PhotographyPage,
 });
 
-type Photo = { src: string; alt: string };
+type Photo = { src: string; alt: string; blurb: string };
 
 const photos: Photo[] = [
-  { src: photo1, alt: "Pigeon perched on a wooden railing at the pier" },
-  { src: photo3, alt: "Silhouette of a graduate against a misty golden sunrise" },
-  { src: photo4, alt: "Small white dog resting on a black leather couch" },
-  { src: photo5, alt: "Portrait bathed in deep red light" },
-  { src: photo11, alt: "Wire-frame sculpture overgrown with succulents against a dusk sky" },
-  { src: photo6, alt: "Pelicans flying over the Bay Bridge" },
-  { src: photo12, alt: "Husky with one blue and one brown eye on a sunlit beach" },
-  { src: photo7, alt: "Motorbike parked on a city sidewalk at dusk" },
-  { src: photo8, alt: "San Francisco skyline from the Embarcadero steps" },
-  { src: photo9, alt: "Crowded street scene at the Embarcadero intersection" },
-  { src: photo10, alt: "Hazy coastal view framed by eucalyptus trees" },
+  { src: photo1, alt: "Pigeon perched on a wooden railing at the pier", blurb: "A lone pigeon pauses on weathered wood, watching the water." },
+  { src: photo3, alt: "Silhouette of a graduate against a misty golden sunrise", blurb: "A graduate stands against the golden haze of a new beginning." },
+  { src: photo4, alt: "Small white dog resting on a black leather couch", blurb: "A small dog finds perfect comfort on a soft leather couch." },
+  { src: photo5, alt: "Portrait bathed in deep red light", blurb: "Warm red light wraps around a quiet, intimate moment." },
+  { src: photo11, alt: "Wire-frame sculpture overgrown with succulents against a dusk sky", blurb: "Nature reclaims wire art as succulents spill over at sunset." },
+  { src: photo6, alt: "Pelicans flying over the Bay Bridge", blurb: "Pelicans glide above the Bay Bridge in the late afternoon light." },
+  { src: photo12, alt: "Husky with one blue and one brown eye on a sunlit beach", blurb: "A husky's mismatched eyes catch the sun on a windswept shore." },
+  { src: photo7, alt: "Motorbike parked on a city sidewalk at dusk", blurb: "A parked motorbike waits under the glow of a fading evening sky." },
+  { src: photo8, alt: "San Francisco skyline from the Embarcadero steps", blurb: "The city rises in layers through the soft afternoon haze." },
+  { src: photo9, alt: "Crowded street scene at the Embarcadero intersection", blurb: "Life rushes through the intersection as the city breathes." },
+  { src: photo10, alt: "Hazy coastal view framed by eucalyptus trees", blurb: "Eucalyptus branches frame a quiet, misty stretch of coast." },
 ];
 
 function PhotographyPage() {
@@ -81,15 +81,20 @@ function PhotographyPage() {
             <button
               key={p.src}
               onClick={() => setActive(p)}
-              className="mb-4 block w-full overflow-hidden rounded-md bg-card text-left transition-transform duration-500 hover:scale-[1.01] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+              className="group relative mb-4 block w-full overflow-hidden rounded-md bg-card text-left transition-transform duration-500 hover:scale-[1.01] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
               aria-label={`Open photo: ${p.alt}`}
             >
               <img
                 src={p.src}
                 alt={p.alt}
                 loading={i < 3 ? "eager" : "lazy"}
-                className="h-auto w-full object-cover transition-opacity duration-700"
+                className="h-auto w-full object-cover transition-opacity duration-700 group-hover:opacity-60"
               />
+              <div className="absolute inset-x-0 bottom-0 translate-y-2 bg-gradient-to-t from-black/80 to-transparent p-4 pt-12 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+                <p className="text-sm font-medium text-white/90 leading-snug">
+                  {p.blurb}
+                </p>
+              </div>
             </button>
           ))}
         </div>
