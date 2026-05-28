@@ -8,7 +8,7 @@ export const Route = createFileRoute("/projects")({
       {
         name: "description",
         content:
-          "A collection of software and engineering projects by Khushi Goel — from trading bots and databases to CPUs, games, and language tools.",
+          "A collection of software and engineering projects by Khushi Goel — from trading bots and query engines to CPUs, games, and language tools.",
       },
     ],
   }),
