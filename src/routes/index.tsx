@@ -24,32 +24,24 @@ export const Route = createFileRoute("/")({
 function AboutPage() {
   return (
     <SiteLayout>
-      <section className="mx-auto max-w-6xl px-6 pt-24 pb-16 sm:pt-32">
-        <div className="grid gap-12 sm:grid-cols-[1fr_auto] sm:items-start">
-          <div className="max-w-2xl">
-            <p className="font-sans text-xs uppercase tracking-[0.2em] text-muted-foreground">
-              About
-            </p>
-            <h1 className="mt-6 font-serif text-5xl leading-[1.05] tracking-tight sm:text-7xl">
-              Khushi Goel.
-            </h1>
-            <p className="mt-6 font-serif text-2xl leading-snug text-muted-foreground sm:text-3xl">
-              Electrical Engineering &amp; Computer Science at UC Berkeley
-            </p>
-          </div>
-          <div className="w-full max-w-[260px] justify-self-start sm:justify-self-end">
-            <img
-              src={portrait}
-              alt="Khushi Goel holding a Nikon camera"
-              className="aspect-[2/3] w-full rounded-md object-cover shadow-2xl"
-              loading="eager"
-            />
-          </div>
-        </div>
-      </section>
+      <section className="mx-auto max-w-5xl px-6 pt-24 pb-24 sm:pt-28">
+        <p className="font-sans text-xs uppercase tracking-[0.2em] text-muted-foreground">
+          About
+        </p>
+        <h1 className="mt-4 font-serif text-5xl leading-[1.05] tracking-tight sm:text-7xl">
+          Khushi Goel.
+        </h1>
+        <p className="mt-4 font-serif text-2xl leading-snug text-muted-foreground sm:text-3xl">
+          Electrical Engineering &amp; Computer Science at UC Berkeley
+        </p>
 
-      <section className="mx-auto max-w-3xl px-6 pb-24">
-        <div className="space-y-7 text-lg leading-relaxed text-foreground/90">
+        <div className="mt-10 space-y-6 text-lg leading-relaxed text-foreground/90">
+          <img
+            src={portrait}
+            alt="Khushi Goel holding a Nikon camera"
+            className="float-none mb-6 aspect-[2/3] w-full max-w-[240px] rounded-md object-cover shadow-2xl sm:float-right sm:ml-8 sm:mb-4 sm:w-[240px]"
+            loading="eager"
+          />
           <p>
             I'm a junior at the University of California, Berkeley studying
             Electrical Engineering and Computer Science. I spend most of my
@@ -79,7 +71,7 @@ function AboutPage() {
           </p>
         </div>
 
-        <div className="mt-16 grid gap-10 border-t border-white/10 pt-10 sm:grid-cols-3">
+        <div className="clear-both mt-16 grid gap-10 border-t border-white/10 pt-10 sm:grid-cols-3">
           <div>
             <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
               Studying
@@ -122,6 +114,7 @@ function AboutPage() {
           </Link>
         </div>
       </section>
+
     </SiteLayout>
   );
 }
