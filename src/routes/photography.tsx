@@ -28,7 +28,7 @@ export const Route = createFileRoute("/photography")({
   component: PhotographyPage,
 });
 
-type Photo = { src: string; alt: string };
+type Photo = { src: string; alt: string; blurb: string };
 
 const photos: Photo[] = [
   { src: photo1, alt: "Pigeon perched on a wooden railing at the pier" },
