@@ -25,7 +25,7 @@ function AboutPage() {
   return (
     <SiteLayout>
       <section className="mx-auto max-w-6xl px-6 pt-24 pb-16 sm:pt-32">
-        <div className="grid gap-12 sm:grid-cols-[1fr_auto] sm:items-end">
+        <div className="grid gap-12 sm:grid-cols-[1fr_auto] sm:items-start">
           <div className="max-w-2xl">
             <p className="font-sans text-xs uppercase tracking-[0.2em] text-muted-foreground">
               About
