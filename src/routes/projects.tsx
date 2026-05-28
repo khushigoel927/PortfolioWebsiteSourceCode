@@ -35,7 +35,7 @@ const projects: Project[] = [
   {
     title: "SQL Engine in Java",
     year: "2026",
-    blurb: "A tiny database I built from scratch.",
+    blurb: "A tiny SQL engine I built from scratch.",
     detail:
       "A Java program that understands SQL — the language used to talk to databases. It can create tables, add data, search through them, delete rows, and combine information from multiple tables. I wrote the parser that reads the queries and the engine that runs them, all from the ground up.",
     stack: ["Java", "SQL", "Parsers"],
@@ -129,7 +129,7 @@ function ProjectsPage() {
           Projects.
         </h1>
         <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
-          A handful of things I've built — across markets, databases,
+          A handful of things I've built — across markets, query engines,
           architecture, language, and game engines. Hover any title to read more.
         </p>
       </section>
