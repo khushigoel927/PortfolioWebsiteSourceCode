@@ -31,11 +31,11 @@ export const Route = createFileRoute("/photography")({
 type Photo = { src: string; alt: string; blurb: string };
 
 const photos: Photo[] = [
-  { src: photo1, alt: "Pigeon perched on a wooden railing at the pier", blurb: "A lone pigeon pauses on weathered wood, watching the water." },
+  { src: photo1, alt: "Pigeon perched on a wooden railing at the pier", blurb: "A curious pigeon, unbothered by my camera, approaches me hoping to make a new friend" },
   { src: photo3, alt: "Silhouette of a graduate against a misty golden sunrise", blurb: "A graduate stands against the golden haze of a new beginning." },
   { src: photo4, alt: "Small white dog resting on a black leather couch", blurb: "A small dog finds perfect comfort on a soft leather couch." },
   { src: photo5, alt: "Portrait bathed in deep red light", blurb: "Warm red light wraps around a quiet, intimate moment." },
-  { src: photo11, alt: "Wire-frame sculpture overgrown with succulents against a dusk sky", blurb: "Nature reclaims wire art as succulents spill over at sunset." },
+  { src: photo11, alt: "Wire-frame sculpture overgrown with succulents against a dusk sky", blurb: "A wire art sculpture of the famous sea lions at Peir 39 in San Francisco" },
   { src: photo6, alt: "Pelicans flying over the Bay Bridge", blurb: "Pelicans glide above the Bay Bridge in the late afternoon light." },
   { src: photo12, alt: "Husky with one blue and one brown eye on a sunlit beach", blurb: "A husky's mismatched eyes catch the sun on a windswept shore." },
   { src: photo7, alt: "Motorbike parked on a city sidewalk at dusk", blurb: "A parked motorbike waits under the glow of a fading evening sky." },
