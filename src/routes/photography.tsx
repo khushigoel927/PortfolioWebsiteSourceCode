@@ -32,12 +32,12 @@ type Photo = { src: string; alt: string; blurb: string };
 
 const photos: Photo[] = [
   { src: photo1, alt: "Pigeon perched on a wooden railing at the pier", blurb: "A curious pigeon, unbothered by my camera, approaches me hoping to make a new friend" },
-  { src: photo3, alt: "Silhouette of a graduate against a misty golden sunrise", blurb: "A graduate stands against the golden haze of a new beginning." },
-  { src: photo4, alt: "Small white dog resting on a black leather couch", blurb: "A small dog finds perfect comfort on a soft leather couch." },
-  { src: photo5, alt: "Portrait bathed in deep red light", blurb: "Warm red light wraps around a quiet, intimate moment." },
+  { src: photo3, alt: "Silhouette of a graduate against a misty golden sunrise", blurb: "A graduate stands against the setting sun slightly hidden behind the clouds at Mount Tam. GO BEARS!" },
+  { src: photo4, alt: "Small white dog resting on a black leather couch", blurb: "My precious dog, Kishmish (meaning \"raisin\" in Hindi), relaxes after a hard day of chasing squirrels " },
+  { src: photo5, alt: "Portrait bathed in deep red light", blurb: "One of my favorite shots from my first studio photoshoot" },
   { src: photo11, alt: "Wire-frame sculpture overgrown with succulents against a dusk sky", blurb: "A wire art sculpture of the famous sea lions at Peir 39 in San Francisco" },
   { src: photo6, alt: "Pelicans flying over the Bay Bridge", blurb: "Pelicans glide above the Bay Bridge in the late afternoon light." },
-  { src: photo12, alt: "Husky with one blue and one brown eye on a sunlit beach", blurb: "A husky's mismatched eyes catch the sun on a windswept shore." },
+  { src: photo12, alt: "Husky with one blue and one brown eye on a sunlit beach", blurb: "An adorable husky hoping to photobomb my shot of the ocean but he ended up making it 10x better" },
   { src: photo7, alt: "Motorbike parked on a city sidewalk at dusk", blurb: "A parked motorbike waits under the glow of a fading evening sky." },
   { src: photo8, alt: "San Francisco skyline from the Embarcadero steps", blurb: "The city rises in layers through the soft afternoon haze." },
   { src: photo9, alt: "Crowded street scene at the Embarcadero intersection", blurb: "Life rushes through the intersection as the city breathes." },
