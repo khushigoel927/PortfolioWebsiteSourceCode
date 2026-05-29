@@ -79,6 +79,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:description", content: "Portfolio of Khushi Goel — EECS @ UC Berkeley." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
+      { name: "twitter:title", content: "Khushi Goel" },
+      { name: "twitter:description", content: "Portfolio of Khushi Goel — EECS @ UC Berkeley." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/59bd2fa2-abc3-498a-962f-1824125274b1/id-preview-835b1a32--f25c112b-efb1-4e18-a899-5b60f8c0d231.lovable.app-1780018957850.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/59bd2fa2-abc3-498a-962f-1824125274b1/id-preview-835b1a32--f25c112b-efb1-4e18-a899-5b60f8c0d231.lovable.app-1780018957850.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
