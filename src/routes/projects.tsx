@@ -38,6 +38,10 @@ const projects: Project[] = [
     detail:
       "An automated trading system that plugs into Kalshi's live market feed, watches multiple events at once, and places trades based on clear rules I set. The focus was reliability and keeping risk in check — so it reacts quickly to price changes without ever putting too much on a single market.",
     stack: ["Java", "REST API", "Real-time data"],
+    images: [
+      { src: kalshi1.url, caption: "Demo mode — live bid/ask stream across baseball markets." },
+      { src: kalshi2.url, caption: "Production mode running against the live Kalshi feed." },
+    ],
   },
   {
     title: "SQL Engine in Java",
