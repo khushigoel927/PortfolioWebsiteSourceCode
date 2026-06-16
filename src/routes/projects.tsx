@@ -127,6 +127,23 @@ function ProjectRow({ project, index }: { project: Project; index: number }) {
                 </li>
               ))}
             </ul>
+            {project.images && project.images.length > 0 && (
+              <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                {project.images.map((img) => (
+                  <figure key={img.src} className="overflow-hidden rounded-md border border-white/10 bg-black/40">
+                    <img
+                      src={img.src}
+                      alt={img.caption}
+                      loading="lazy"
+                      className="block h-auto w-full object-cover"
+                    />
+                    <figcaption className="px-3 py-2 text-xs text-muted-foreground">
+                      {img.caption}
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </div>
