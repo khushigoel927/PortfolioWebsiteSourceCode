@@ -27,6 +27,7 @@ type Project = {
   blurb: string;
   detail: string;
   stack: string[];
+  images?: { src: string; caption: string }[];
 };
 
 const projects: Project[] = [
