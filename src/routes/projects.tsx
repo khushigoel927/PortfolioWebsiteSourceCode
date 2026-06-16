@@ -1,5 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "../components/layout/SiteLayout";
+import byow1 from "../assets/projects/byow-1.png.asset.json";
+import byow2 from "../assets/projects/byow-2.png.asset.json";
+import byow3 from "../assets/projects/byow-3.png.asset.json";
+import byow4 from "../assets/projects/byow-4.png.asset.json";
+import kalshi1 from "../assets/projects/kalshi-1.png.asset.json";
+import kalshi2 from "../assets/projects/kalshi-2.png.asset.json";
 
 export const Route = createFileRoute("/projects")({
   head: () => ({
