@@ -66,6 +66,12 @@ const projects: Project[] = [
     detail:
       "A 2D game where every world is generated randomly — rooms, hallways, and features connect differently each time you play. You can save your progress and pick up later. I also added a line-of-sight feature so you only see what your character can actually see, which makes exploring feel a lot more immersive.",
     stack: ["Java", "StdDraw", "Procedural Generation"],
+    images: [
+      { src: byow1.url, caption: "A freshly generated world with line-of-sight disabled." },
+      { src: byow2.url, caption: "Line-of-sight enabled — you only see what your character can see." },
+      { src: byow3.url, caption: "Game over — the villain caught up after 4 coins." },
+      { src: byow4.url, caption: "Victory screen after collecting all 10 coins and escaping." },
+    ],
   },
   {
     title: "NGordNet",
