@@ -1,5 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "../components/layout/SiteLayout";
+import byow1 from "../assets/projects/byow-1.png.asset.json";
+import byow2 from "../assets/projects/byow-2.png.asset.json";
+import byow3 from "../assets/projects/byow-3.png.asset.json";
+import byow4 from "../assets/projects/byow-4.png.asset.json";
+import kalshi1 from "../assets/projects/kalshi-1.png.asset.json";
+import kalshi2 from "../assets/projects/kalshi-2.png.asset.json";
 
 export const Route = createFileRoute("/projects")({
   head: () => ({
@@ -21,6 +27,7 @@ type Project = {
   blurb: string;
   detail: string;
   stack: string[];
+  images?: { src: string; caption: string }[];
 };
 
 const projects: Project[] = [
@@ -31,6 +38,10 @@ const projects: Project[] = [
     detail:
       "An automated trading system that plugs into Kalshi's live market feed, watches multiple events at once, and places trades based on clear rules I set. The focus was reliability and keeping risk in check — so it reacts quickly to price changes without ever putting too much on a single market.",
     stack: ["Java", "REST API", "Real-time data"],
+    images: [
+      { src: kalshi1.url, caption: "Demo mode — live bid/ask stream across baseball markets." },
+      { src: kalshi2.url, caption: "Production mode running against the live Kalshi feed." },
+    ],
   },
   {
     title: "SQL Engine in Java",
@@ -55,6 +66,12 @@ const projects: Project[] = [
     detail:
       "A 2D game where every world is generated randomly — rooms, hallways, and features connect differently each time you play. You can save your progress and pick up later. I also added a line-of-sight feature so you only see what your character can actually see, which makes exploring feel a lot more immersive.",
     stack: ["Java", "StdDraw", "Procedural Generation"],
+    images: [
+      { src: byow1.url, caption: "A freshly generated world with line-of-sight disabled." },
+      { src: byow2.url, caption: "Line-of-sight enabled — you only see what your character can see." },
+      { src: byow3.url, caption: "Game over — the villain caught up after 4 coins." },
+      { src: byow4.url, caption: "Victory screen after collecting all 10 coins and escaping." },
+    ],
   },
   {
     title: "NGordNet",
@@ -110,6 +127,23 @@ function ProjectRow({ project, index }: { project: Project; index: number }) {
                 </li>
               ))}
             </ul>
+            {project.images && project.images.length > 0 && (
+              <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                {project.images.map((img) => (
+                  <figure key={img.src} className="overflow-hidden rounded-md border border-white/10 bg-black/40">
+                    <img
+                      src={img.src}
+                      alt={img.caption}
+                      loading="lazy"
+                      className="block h-auto w-full object-cover"
+                    />
+                    <figcaption className="px-3 py-2 text-xs text-muted-foreground">
+                      {img.caption}
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </div>
