@@ -6,6 +6,10 @@ import byow3 from "../assets/projects/byow-3.png.asset.json";
 import byow4 from "../assets/projects/byow-4.png.asset.json";
 import kalshi1 from "../assets/projects/kalshi-1.png.asset.json";
 import kalshi2 from "../assets/projects/kalshi-2.png.asset.json";
+import medcheck1 from "../assets/projects/medcheck-1.png.asset.json";
+import medcheck2 from "../assets/projects/medcheck-2.png.asset.json";
+import medcheck3 from "../assets/projects/medcheck-3.png.asset.json";
+import medcheck4 from "../assets/projects/medcheck-4.png.asset.json";
 
 export const Route = createFileRoute("/projects")({
   head: () => ({
