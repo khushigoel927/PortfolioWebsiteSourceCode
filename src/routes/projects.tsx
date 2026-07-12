@@ -31,24 +31,10 @@ type Project = {
   blurb: string;
   detail: string;
   stack: string[];
-  images?: { src: string; caption: string }[];
+  images?: { src: string; caption: string; wide?: boolean }[];
 };
 
 const projects: Project[] = [
-  {
-    title: "MedCheck",
-    year: "2026",
-    blurb: "An app that reads your pill bottle and warns you about drug interactions.",
-    detail:
-      "Built with Palantir Foundry AIP, GPT-4o vision, and agentic AI. Snap a photo of a medication and the app identifies the drug, resolves it against a Foundry ontology of your current prescriptions, and flags dangerous interactions. I designed a no-code AIP Logic pipeline that chains vision AI, ontology resolution, and interaction lookup into one automated flow, then generated an OSDK React app and clinician dashboard from the ontology — going from zero Foundry experience to a working system in a matter of days.",
-    stack: ["Palantir Foundry AIP", "GPT-4o Vision", "OSDK", "React", "Agentic AI"],
-    images: [
-      { src: medcheck1.url, caption: "Foundry ontology and AIP Logic pipeline built in Solution Designer." },
-      { src: medcheck3.url, caption: "Step 3 — snap a photo and AI identifies the medication." },
-      { src: medcheck4.url, caption: "Step 2 — your current medication list from the ontology." },
-      { src: medcheck2.url, caption: "Step 4 — interaction results with severity and guidance." },
-    ],
-  },
   {
     title: "Kalshi Trading Bot",
     year: "2026",
@@ -59,6 +45,20 @@ const projects: Project[] = [
     images: [
       { src: kalshi1.url, caption: "Demo mode — live bid/ask stream across baseball markets." },
       { src: kalshi2.url, caption: "Production mode running against the live Kalshi feed." },
+    ],
+  },
+  {
+    title: "MedCheck",
+    year: "2026",
+    blurb: "An app that reads your pill bottle and warns you about drug interactions.",
+    detail:
+      "Built with Palantir Foundry AIP, GPT-4o vision, and agentic AI. Snap a photo of a medication and the app identifies the drug, resolves it against a Foundry ontology of your current prescriptions, and flags dangerous interactions. I designed a no-code AIP Logic pipeline that chains vision AI, ontology resolution, and interaction lookup into one automated flow, then generated an OSDK React app and clinician dashboard from the ontology — going from zero Foundry experience to a working system in a matter of days.",
+    stack: ["Palantir Foundry AIP", "GPT-4o Vision", "OSDK", "React", "Agentic AI"],
+    images: [
+      { src: medcheck1.url, caption: "Foundry ontology and AIP Logic pipeline built in Solution Designer.", wide: true },
+      { src: medcheck3.url, caption: "Step 3 — snap a photo and AI identifies the medication." },
+      { src: medcheck4.url, caption: "Step 2 — your current medication list from the ontology." },
+      { src: medcheck2.url, caption: "Step 4 — interaction results with severity and guidance." },
     ],
   },
   {
@@ -146,20 +146,41 @@ function ProjectRow({ project, index }: { project: Project; index: number }) {
               ))}
             </ul>
             {project.images && project.images.length > 0 && (
-              <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                {project.images.map((img) => (
-                  <figure key={img.src} className="overflow-hidden rounded-md border border-white/10 bg-black/40">
-                    <img
-                      src={img.src}
-                      alt={img.caption}
-                      loading="lazy"
-                      className="block h-auto w-full object-cover"
-                    />
-                    <figcaption className="px-3 py-2 text-xs text-muted-foreground">
-                      {img.caption}
-                    </figcaption>
-                  </figure>
-                ))}
+              <div className="mt-6 grid gap-4">
+                {project.images
+                  .filter((img) => img.wide)
+                  .map((img) => (
+                    <figure key={img.src} className="overflow-hidden rounded-md border border-white/10 bg-black/40">
+                      <img
+                        src={img.src}
+                        alt={img.caption}
+                        loading="lazy"
+                        className="block h-auto w-full object-cover"
+                      />
+                      <figcaption className="px-3 py-2 text-xs text-muted-foreground">
+                        {img.caption}
+                      </figcaption>
+                    </figure>
+                  ))}
+                {project.images.filter((img) => !img.wide).length > 0 && (
+                  <div className="grid gap-4 sm:grid-cols-3">
+                    {project.images
+                      .filter((img) => !img.wide)
+                      .map((img) => (
+                        <figure key={img.src} className="overflow-hidden rounded-md border border-white/10 bg-black/40">
+                          <img
+                            src={img.src}
+                            alt={img.caption}
+                            loading="lazy"
+                            className="block h-auto w-full object-cover"
+                          />
+                          <figcaption className="px-3 py-2 text-xs text-muted-foreground">
+                            {img.caption}
+                          </figcaption>
+                        </figure>
+                      ))}
+                  </div>
+                )}
               </div>
             )}
           </div>
