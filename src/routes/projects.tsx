@@ -56,8 +56,8 @@ const projects: Project[] = [
     stack: ["Palantir Foundry AIP", "GPT-4o Vision", "OSDK", "React", "Agentic AI"],
     images: [
       { src: medcheck1.url, caption: "Foundry ontology and AIP Logic pipeline built in Solution Designer.", wide: true },
-      { src: medcheck3.url, caption: "Step 3 — snap a photo and AI identifies the medication." },
       { src: medcheck4.url, caption: "Step 2 — your current medication list from the ontology." },
+      { src: medcheck3.url, caption: "Step 3 — snap a photo and AI identifies the medication." },
       { src: medcheck2.url, caption: "Step 4 — interaction results with severity and guidance." },
     ],
   },
