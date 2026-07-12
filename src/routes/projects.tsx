@@ -6,6 +6,10 @@ import byow3 from "../assets/projects/byow-3.png.asset.json";
 import byow4 from "../assets/projects/byow-4.png.asset.json";
 import kalshi1 from "../assets/projects/kalshi-1.png.asset.json";
 import kalshi2 from "../assets/projects/kalshi-2.png.asset.json";
+import medcheck1 from "../assets/projects/medcheck-1.png.asset.json";
+import medcheck2 from "../assets/projects/medcheck-2.png.asset.json";
+import medcheck3 from "../assets/projects/medcheck-3.png.asset.json";
+import medcheck4 from "../assets/projects/medcheck-4.png.asset.json";
 
 export const Route = createFileRoute("/projects")({
   head: () => ({
@@ -31,6 +35,20 @@ type Project = {
 };
 
 const projects: Project[] = [
+  {
+    title: "MedCheck",
+    year: "2026",
+    blurb: "An app that reads your pill bottle and warns you about drug interactions.",
+    detail:
+      "Built with Palantir Foundry AIP, GPT-4o vision, and agentic AI. Snap a photo of a medication and the app identifies the drug, resolves it against a Foundry ontology of your current prescriptions, and flags dangerous interactions. I designed a no-code AIP Logic pipeline that chains vision AI, ontology resolution, and interaction lookup into one automated flow, then generated an OSDK React app and clinician dashboard from the ontology — going from zero Foundry experience to a working system in a matter of days.",
+    stack: ["Palantir Foundry AIP", "GPT-4o Vision", "OSDK", "React", "Agentic AI"],
+    images: [
+      { src: medcheck1.url, caption: "Foundry ontology and AIP Logic pipeline built in Solution Designer." },
+      { src: medcheck3.url, caption: "Step 3 — snap a photo and AI identifies the medication." },
+      { src: medcheck4.url, caption: "Step 2 — your current medication list from the ontology." },
+      { src: medcheck2.url, caption: "Step 4 — interaction results with severity and guidance." },
+    ],
+  },
   {
     title: "Kalshi Trading Bot",
     year: "2026",
