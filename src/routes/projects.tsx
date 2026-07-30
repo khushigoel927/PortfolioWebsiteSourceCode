@@ -31,7 +31,7 @@ type Project = {
   blurb: string;
   detail: string;
   stack: string[];
-  images?: { src: string; caption: string; wide?: boolean }[];
+  images?: { src: string; caption: string; wide?: boolean; small?: boolean }[];
 };
 
 const projects: Project[] = [
@@ -56,9 +56,9 @@ const projects: Project[] = [
     stack: ["Palantir Foundry AIP", "GPT-4o Vision", "OSDK", "React", "Agentic AI"],
     images: [
       { src: medcheck1.url, caption: "Foundry ontology and AIP Logic pipeline built in Solution Designer.", wide: true },
-      { src: medcheck4.url, caption: "Step 2 — your current medication list from the ontology." },
-      { src: medcheck3.url, caption: "Step 3 — snap a photo and AI identifies the medication." },
-      { src: medcheck2.url, caption: "Step 4 — interaction results with severity and guidance." },
+      { src: medcheck4.url, caption: "Step 2 — your current medication list from the ontology.", small: true },
+      { src: medcheck3.url, caption: "Step 3 — snap a photo and AI identifies the medication.", small: true },
+      { src: medcheck2.url, caption: "Step 4 — interaction results with severity and guidance.", small: true },
     ],
   },
   {
@@ -162,10 +162,29 @@ function ProjectRow({ project, index }: { project: Project; index: number }) {
                       </figcaption>
                     </figure>
                   ))}
-                {project.images.filter((img) => !img.wide).length > 0 && (
+                {project.images.filter((img) => !img.wide && !img.small).length > 0 && (
                   <div className="grid gap-4 sm:grid-cols-3">
                     {project.images
-                      .filter((img) => !img.wide)
+                      .filter((img) => !img.wide && !img.small)
+                      .map((img) => (
+                        <figure key={img.src} className="overflow-hidden rounded-md border border-white/10 bg-black/40">
+                          <img
+                            src={img.src}
+                            alt={img.caption}
+                            loading="lazy"
+                            className="block h-auto w-full object-cover"
+                          />
+                          <figcaption className="px-3 py-2 text-xs text-muted-foreground">
+                            {img.caption}
+                          </figcaption>
+                        </figure>
+                      ))}
+                  </div>
+                )}
+                {project.images.filter((img) => img.small).length > 0 && (
+                  <div className="mx-auto grid w-full max-w-3xl gap-4 sm:grid-cols-3">
+                    {project.images
+                      .filter((img) => img.small)
                       .map((img) => (
                         <figure key={img.src} className="overflow-hidden rounded-md border border-white/10 bg-black/40">
                           <img
