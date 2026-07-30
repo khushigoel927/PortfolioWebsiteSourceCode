@@ -162,10 +162,29 @@ function ProjectRow({ project, index }: { project: Project; index: number }) {
                       </figcaption>
                     </figure>
                   ))}
-                {project.images.filter((img) => !img.wide).length > 0 && (
+                {project.images.filter((img) => !img.wide && !img.small).length > 0 && (
                   <div className="grid gap-4 sm:grid-cols-3">
                     {project.images
-                      .filter((img) => !img.wide)
+                      .filter((img) => !img.wide && !img.small)
+                      .map((img) => (
+                        <figure key={img.src} className="overflow-hidden rounded-md border border-white/10 bg-black/40">
+                          <img
+                            src={img.src}
+                            alt={img.caption}
+                            loading="lazy"
+                            className="block h-auto w-full object-cover"
+                          />
+                          <figcaption className="px-3 py-2 text-xs text-muted-foreground">
+                            {img.caption}
+                          </figcaption>
+                        </figure>
+                      ))}
+                  </div>
+                )}
+                {project.images.filter((img) => img.small).length > 0 && (
+                  <div className="mx-auto grid w-full max-w-3xl gap-4 sm:grid-cols-3">
+                    {project.images
+                      .filter((img) => img.small)
                       .map((img) => (
                         <figure key={img.src} className="overflow-hidden rounded-md border border-white/10 bg-black/40">
                           <img
