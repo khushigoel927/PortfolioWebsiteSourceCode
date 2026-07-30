@@ -57,10 +57,11 @@ function AboutPage() {
             that are actually well thought out.
           </p>
           <p>
-            Beyond my own work, I care about making STEM more accessible.
-            I've tutored K–7 students in math, science, and computer science,
-            and coached an all-girls FIRST Lego League robotics team through
-            international-level competition.
+            This summer, I’m working for forestrat.ai, a trading-and-data
+            software company for investment funds, as a software engineering
+            intern where I’m analyzing tick data and designing custom features.
+            Additionally I've been employed by the Princeton Review as a tutor
+            helping students in Java and Electrical Engineering.
           </p>
           <p>
             Outside of engineering, I've been getting into photography. I'm
