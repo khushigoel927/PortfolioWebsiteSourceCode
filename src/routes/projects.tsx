@@ -64,6 +64,19 @@ const projects: Project[] = [
     ],
   },
   {
+    title: "Options Selling Explorer",
+    year: "2026",
+    blurb: "A dashboard for selling options — plus a paper-trading playground.",
+    detail:
+      "I wanted to learn options selling by actually doing it, so I built a dashboard where I can trade and visualize my positions. An option chain gives you hundreds of rows of bid, ask, open interest, and volume — useful data, but it doesn't answer the questions a seller actually has. My explorer filters out strikes that don't even have a live bid, shows how much cash a cash-secured put has to reserve (not just the premium), measures how far each strike sits from the current stock price, and labels every contract Liquid, Thin, or No Bid. Then I built a paper-trading Playground so I can experiment with $200k of virtual capital. Each position tracks its current value and what would happen if it settled at expiration today — premium collected, collateral reserved, realized and unrealized P&L — with buy-to-close and automatic settlement at expiration using the underlying's closing price. Next up: five autonomous bots, each running a different options-selling strategy, to see which one actually performs best over months of trading. Suggestions for what bots to build are welcome.",
+    stack: ["Python", "Yahoo Finance API", "Paper Trading", "Data Visualization"],
+    images: [
+      { src: options2.url, caption: "Explorer — live quotes, liquidity labels, and cash-to-secure per strike." },
+      { src: options1.url, caption: "Playground — paper positions with P&L, collateral, and buy-to-close." },
+    ],
+  },
+  {
+
     title: "SQL Engine in Java",
     year: "2026",
     blurb: "A tiny SQL engine I built from scratch.",
