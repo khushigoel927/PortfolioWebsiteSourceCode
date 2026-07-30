@@ -31,7 +31,7 @@ type Project = {
   blurb: string;
   detail: string;
   stack: string[];
-  images?: { src: string; caption: string; wide?: boolean }[];
+  images?: { src: string; caption: string; wide?: boolean; small?: boolean }[];
 };
 
 const projects: Project[] = [
