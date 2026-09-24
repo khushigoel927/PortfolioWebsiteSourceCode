@@ -197,7 +197,7 @@ function ProjectRow({ project, index }: { project: Project; index: number }) {
                   </div>
                 )}
                 {project.images.filter((img) => img.small).length > 0 && (
-                  <div className="mx-auto grid w-full max-w-3xl gap-4 sm:grid-cols-3">
+                  <div className="mx-auto grid w-full max-w-4xl gap-4 sm:grid-cols-3">
                     {project.images
                       .filter((img) => img.small)
                       .map((img) => (
