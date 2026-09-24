@@ -178,7 +178,13 @@ function ProjectRow({ project, index }: { project: Project; index: number }) {
                     </figure>
                   ))}
                 {project.images.filter((img) => !img.wide && !img.small).length > 0 && (
-                  <div className="grid gap-4 sm:grid-cols-3">
+                  <div
+                    className={
+                      project.images.filter((img) => !img.wide && !img.small).length === 2
+                        ? "grid gap-4 sm:grid-cols-2"
+                        : "grid gap-4 sm:grid-cols-3"
+                    }
+                  >
                     {project.images
                       .filter((img) => !img.wide && !img.small)
                       .map((img) => (
