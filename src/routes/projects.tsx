@@ -40,10 +40,10 @@ const projects: Project[] = [
   {
     title: "Kalshi Trading Bot",
     year: "2026",
-    blurb: "A bot that trades on live event markets, on its own.",
+    blurb: "A live baseball markets dashboard — and a bot that trades on its own.",
     detail:
-      "An automated trading system that plugs into Kalshi's live market feed, watches multiple events at once, and places trades based on clear rules I set. The focus was reliability and keeping risk in check — so it reacts quickly to price changes without ever putting too much on a single market.",
-    stack: ["Java", "REST API", "Real-time data"],
+      "A single self-contained Java app for Kalshi's MLB prediction markets. The dashboard lists every baseball game currently tradeable, groups them by series, and streams live bid/ask prices in real time — with each game enriched with the live score and inning from the MLB Stats API (Kalshi has no score data of its own), so you can see both teams' prices and an implied win-percentage bar update in place as the game unfolds. On an opt-in basis, an automated trading bot watches late-inning games (inning 7+), estimates each team's win probability from the live game state — score, inning, outs, runners, and bullpen changes — and rests careful post-only limit orders only on strong, high-confidence edges. It's built for a small number of high-quality trades, with hard caps of at most 100 order placements and 50 contracts per game, and it stays in demo mode unless explicitly switched over. Everything is one app: a built-in HTTP server serves the live web UI, prices stream over the Kalshi WebSocket with an automatic polling fallback, and the only third-party dependency is Gson.",
+    stack: ["Java 23", "WebSocket", "REST API", "Server-Sent Events", "Maven", "Win-Probability Model"],
     images: [
       { src: kalshi1.url, caption: "Demo mode — live bid/ask stream across baseball markets." },
       { src: kalshi2.url, caption: "Production mode running against the live Kalshi feed." },
